@@ -6,6 +6,10 @@ public class App {
     public static void main(String[] args) throws Exception {
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.getContentPane().add(new LifePanel());
+        frame.pack();
+        frame.setVisible(true);
+        
 
 
         
