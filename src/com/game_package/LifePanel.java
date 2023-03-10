@@ -18,7 +18,7 @@ public class LifePanel extends JPanel{
         setBackground(Color.GRAY);
         setPreferredSize(new Dimension(WORLDSIZE,WORLDSIZE));
         isAliveArray = new boolean[NUMBEROFCELLS][NUMBEROFCELLS];
-        fillArray();
+        fillArray(.3);
     }
 
     @Override
@@ -34,11 +34,11 @@ public class LifePanel extends JPanel{
         } 
     }
     
-    public void fillArray(){
+    public void fillArray(double probability){
         Random random = new Random();
         for(int i = 0; i < NUMBEROFCELLS; i++){
             for(int j = 0; j < NUMBEROFCELLS; j++){
-                isAliveArray[i][j] = random.nextBoolean();
+                isAliveArray[i][j] = random.nextDouble() < probability;
             }
         } 
     }
